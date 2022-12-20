@@ -1,0 +1,29 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"LF_hip" [label="LF_hip"];
+"LF_thigh" [label="LF_thigh"];
+"LH_hip" [label="LH_hip"];
+"LH_thigh" [label="LH_thigh"];
+"RF_hip" [label="RF_hip"];
+"RF_thigh" [label="RF_thigh"];
+"RH_hip" [label="RH_hip"];
+"RH_thigh" [label="RH_thigh"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "LF_HAA" [label="xyz: 0.084 0 -0.026 \nrpy: 3.14159 0.00159265 3.14159"]
+"LF_HAA" -> "LF_hip"
+"LF_hip" -> "LF_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
+"LF_HFE" -> "LF_thigh"
+"base_link" -> "LH_HAA" [label="xyz: -0.084 0 -0.026 \nrpy: 3.14159 -0.00159265 3.14159"]
+"LH_HAA" -> "LH_hip"
+"LH_hip" -> "LH_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
+"LH_HFE" -> "LH_thigh"
+"base_link" -> "RF_HAA" [label="xyz: 0.084 0 0.026 \nrpy: 0 -0 0"]
+"RF_HAA" -> "RF_hip"
+"RF_hip" -> "RF_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
+"RF_HFE" -> "RF_thigh"
+"base_link" -> "RH_HAA" [label="xyz: -0.084 0 0.026 \nrpy: 0 -0 0"]
+"RH_HAA" -> "RH_hip"
+"RH_hip" -> "RH_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
+"RH_HFE" -> "RH_thigh"
+}

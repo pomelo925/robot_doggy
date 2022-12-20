@@ -1,0 +1,183 @@
+<robot name="puppy">
+<!-- unit: cm, rad -->
+<!-- LINK -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.172 0.033 0.1"/>
+            </geometry>
+            <material name="gray">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>
+        </visual>
+    </link>
+
+
+<!-- HIP LINK -->
+    <link name="RF_hip">
+        <visual>
+            <origin xyz="0 0 0.02165" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0113" length="0.0433"/>
+            </geometry>
+            <material name="cyan">
+                <color rgba="0 0.9 0.9 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="RH_hip">
+        <visual>
+            <origin xyz="0 0 0.02165" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0113" length="0.0433"/>
+            </geometry>
+            <material name="cyan">
+                <color rgba="0 0.9 0.9 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="LF_hip">
+        <visual>
+            <origin xyz="0 0 0.02165" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0113" length="0.0433"/>
+            </geometry>
+            <material name="cyan">
+                <color rgba="0 0.9 0.9 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="LH_hip">
+        <visual>
+            <origin xyz="0 0 0.02165" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0113" length="0.0433"/>
+            </geometry>
+            <material name="cyan">
+                <color rgba="0 0.9 0.9 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+<!-- THIGH LINK -->
+    <link name="RF_thigh">
+        <visual>
+            <origin xyz="-0.0226274 -0.0226274 0" rpy="-1.57 0.7854 0"/>
+            <geometry>
+                <cylinder radius="0.0115" length="0.064"/>
+            </geometry>
+            <material name="yellow">
+                <color rgba="0.8 0.8 0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="RH_thigh">
+        <visual>
+            <origin xyz="-0.0226274 -0.0226274 0" rpy="-1.57 0.7854 0"/>
+            <geometry>
+                <cylinder radius="0.0115" length="0.064"/>
+            </geometry>
+            <material name="yellow">
+                <color rgba="0.8 0.8 0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="LF_thigh">
+        <visual>
+            <origin xyz="0.0226274 -0.0226274 0" rpy="-1.57 -0.7854 0"/>
+            <geometry>
+                <cylinder radius="0.0115" length="0.064"/>
+            </geometry>
+            <material name="yellow">
+                <color rgba="0.8 0.8 0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="LH_thigh">
+        <visual>
+            <origin xyz="0.0226274 -0.0226274 0" rpy="-1.57 -0.7854 0"/>
+            <geometry>
+                <cylinder radius="0.0115" length="0.064"/>
+            </geometry>
+            <material name="yellow">
+                <color rgba="0.8 0.8 0 1.0"/>
+            </material>
+        </visual>
+    </link>
+    
+<!-- JOINT -->
+<!-- HAA -->
+    <joint name="RF_HAA" type="continuous">
+        <parent link="base_link"/>
+        <child link="RF_hip"/>
+        <origin xyz="0.084 0 0.026" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="RH_HAA" type="continuous">
+        <parent link="base_link"/>
+        <child link="RH_hip"/>
+        <origin xyz="-0.084 0 0.026" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="LF_HAA" type="continuous">
+        <parent link="base_link"/>
+        <child link="LF_hip"/>
+        <origin xyz="0.084 0 -0.026" rpy="0 3.14 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="LH_HAA" type="continuous">
+        <parent link="base_link"/>
+        <child link="LH_hip"/>
+        <origin xyz="-0.084 0 -0.026" rpy="0 -3.14 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+<!-- HFE -->
+    <joint name="RF_HFE" type="revolute">
+        <parent link="RF_hip"/>
+        <child link="RF_thigh"/>
+        <origin xyz="0 0 0.04" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="RH_HFE" type="revolute">
+        <parent link="RH_hip"/>
+        <child link="RH_thigh"/>
+        <origin xyz="0 0 0.04" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="LF_HFE" type="revolute">
+        <parent link="LF_hip"/>
+        <child link="LF_thigh"/>
+        <origin xyz="0 0 0.04" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="LH_HFE" type="revolute">
+        <parent link="LH_hip"/>
+        <child link="LH_thigh"/>
+        <origin xyz="0 0 0.04" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+<!-- HFE -->
+</robot>
