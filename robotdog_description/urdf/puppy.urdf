@@ -19,7 +19,7 @@
         <visual>
             <origin xyz="0 0 0.02165" rpy="0 0 0"/>
             <geometry>
-                <cylinder radius="0.0113" length="0.0433"/>
+                <cylinder radius="0.015" length="0.0433"/>
             </geometry>
             <material name="cyan">
                 <color rgba="0 0.9 0.9 1.0"/>
@@ -31,11 +31,9 @@
         <visual>
             <origin xyz="0 0 0.02165" rpy="0 0 0"/>
             <geometry>
-                <cylinder radius="0.0113" length="0.0433"/>
+                <cylinder radius="0.015" length="0.0433"/>
             </geometry>
-            <material name="cyan">
-                <color rgba="0 0.9 0.9 1.0"/>
-            </material>
+            <material name="cyan"/>
         </visual>
     </link>
 
@@ -43,11 +41,9 @@
         <visual>
             <origin xyz="0 0 0.02165" rpy="0 0 0"/>
             <geometry>
-                <cylinder radius="0.0113" length="0.0433"/>
+                <cylinder radius="0.015" length="0.0433"/>
             </geometry>
-            <material name="cyan">
-                <color rgba="0 0.9 0.9 1.0"/>
-            </material>
+            <material name="cyan"/>
         </visual>
     </link>
 
@@ -55,11 +51,9 @@
         <visual>
             <origin xyz="0 0 0.02165" rpy="0 0 0"/>
             <geometry>
-                <cylinder radius="0.0113" length="0.0433"/>
+                <cylinder radius="0.015" length="0.0433"/>
             </geometry>
-            <material name="cyan">
-                <color rgba="0 0.9 0.9 1.0"/>
-            </material>
+            <material name="cyan"/>
         </visual>
     </link>
 
@@ -68,7 +62,7 @@
         <visual>
             <origin xyz="-0.0226274 -0.0226274 0" rpy="-1.57 0.7854 0"/>
             <geometry>
-                <cylinder radius="0.0115" length="0.064"/>
+                <cylinder radius="0.012" length="0.064"/>
             </geometry>
             <material name="yellow">
                 <color rgba="0.8 0.8 0 1.0"/>
@@ -80,11 +74,9 @@
         <visual>
             <origin xyz="-0.0226274 -0.0226274 0" rpy="-1.57 0.7854 0"/>
             <geometry>
-                <cylinder radius="0.0115" length="0.064"/>
+                <cylinder radius="0.012" length="0.064"/>
             </geometry>
-            <material name="yellow">
-                <color rgba="0.8 0.8 0 1.0"/>
-            </material>
+            <material name="yellow"/>
         </visual>
     </link>
 
@@ -92,11 +84,9 @@
         <visual>
             <origin xyz="0.0226274 -0.0226274 0" rpy="-1.57 -0.7854 0"/>
             <geometry>
-                <cylinder radius="0.0115" length="0.064"/>
+                <cylinder radius="0.012" length="0.064"/>
             </geometry>
-            <material name="yellow">
-                <color rgba="0.8 0.8 0 1.0"/>
-            </material>
+            <material name="yellow"/>
         </visual>
     </link>
 
@@ -104,14 +94,56 @@
         <visual>
             <origin xyz="0.0226274 -0.0226274 0" rpy="-1.57 -0.7854 0"/>
             <geometry>
-                <cylinder radius="0.0115" length="0.064"/>
+                <cylinder radius="0.012" length="0.064"/>
             </geometry>
-            <material name="yellow">
-                <color rgba="0.8 0.8 0 1.0"/>
-            </material>
+            <material name="yellow"/>
         </visual>
     </link>
     
+<!-- calf -->
+    <link name="RF_calf">
+        <visual>
+            <origin xyz="0.0283 -0.0283 0" rpy="-1.57 -0.765 0"/>
+            <geometry>
+                <cylinder radius="0.008" length="0.08"/>
+            </geometry>
+            <material name="red">
+                <color rgba="0.8 0 0 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="RH_calf">
+        <visual>
+            <origin xyz="0.0283 -0.0283 0" rpy="-1.57 -0.765 0"/>
+            <geometry>
+                <cylinder radius="0.008" length="0.08"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+
+    <link name="LF_calf">
+        <visual>
+            <origin xyz="-0.0283 -0.0283 0" rpy="-1.57 0.765 0"/>
+            <geometry>
+                <cylinder radius="0.008" length="0.08"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+
+    <link name="LH_calf">
+        <visual>
+            <origin xyz="-0.0283 -0.0283 0" rpy="-1.57 0.765 0"/>
+            <geometry>
+                <cylinder radius="0.008" length="0.08"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+
+
 <!-- JOINT -->
 <!-- HAA -->
     <joint name="RF_HAA" type="continuous">
@@ -119,7 +151,7 @@
         <child link="RF_hip"/>
         <origin xyz="0.084 0 0.026" rpy="0 0 0"/>
         <axis xyz="1 0 0"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
     <joint name="RH_HAA" type="continuous">
@@ -127,7 +159,7 @@
         <child link="RH_hip"/>
         <origin xyz="-0.084 0 0.026" rpy="0 0 0"/>
         <axis xyz="1 0 0"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
     <joint name="LF_HAA" type="continuous">
@@ -135,7 +167,7 @@
         <child link="LF_hip"/>
         <origin xyz="0.084 0 -0.026" rpy="0 3.14 0"/>
         <axis xyz="1 0 0"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
     <joint name="LH_HAA" type="continuous">
@@ -143,7 +175,7 @@
         <child link="LH_hip"/>
         <origin xyz="-0.084 0 -0.026" rpy="0 -3.14 0"/>
         <axis xyz="1 0 0"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
 <!-- HFE -->
@@ -152,7 +184,7 @@
         <child link="RF_thigh"/>
         <origin xyz="0 0 0.04" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
     <joint name="RH_HFE" type="revolute">
@@ -160,7 +192,7 @@
         <child link="RH_thigh"/>
         <origin xyz="0 0 0.04" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
     <joint name="LF_HFE" type="revolute">
@@ -168,7 +200,7 @@
         <child link="LF_thigh"/>
         <origin xyz="0 0 0.04" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
     <joint name="LH_HFE" type="revolute">
@@ -176,8 +208,39 @@
         <child link="LH_thigh"/>
         <origin xyz="0 0 0.04" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-1.74" upper="1.74" effort="1000.0" velocity="0.5"/>
+        <limit lower="-1.57" upper="1.57" effort="1000.0" velocity="0.5"/>
     </joint>
 
-<!-- HFE -->
+<!-- KFE -->
+    <joint name="RF_KFE" type="revolute">
+        <parent link="RF_thigh"/>
+        <child link="RF_calf"/>
+        <origin xyz="-0.0452 -0.0452 0" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.785" upper="0.785" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="RH_KFE" type="revolute">
+        <parent link="RH_thigh"/>
+        <child link="RH_calf"/>
+        <origin xyz="-0.0452 -0.0452 0" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.785" upper="0.785" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="LF_KFE" type="revolute">
+        <parent link="LF_thigh"/>
+        <child link="LF_calf"/>
+        <origin xyz="0.0452 -0.0452 0" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.785" upper="0.785" effort="1000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="LH_KFE" type="revolute">
+        <parent link="LH_thigh"/>
+        <child link="LH_calf"/>
+        <origin xyz="0.0452 -0.0452 0" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.785" upper="0.785" effort="1000.0" velocity="0.5"/>
+    </joint>
 </robot>

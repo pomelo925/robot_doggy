@@ -3,27 +3,39 @@ node [shape=box];
 "base_link" [label="base_link"];
 "LF_hip" [label="LF_hip"];
 "LF_thigh" [label="LF_thigh"];
+"LF_calf" [label="LF_calf"];
 "LH_hip" [label="LH_hip"];
 "LH_thigh" [label="LH_thigh"];
+"LH_calf" [label="LH_calf"];
 "RF_hip" [label="RF_hip"];
 "RF_thigh" [label="RF_thigh"];
+"RF_calf" [label="RF_calf"];
 "RH_hip" [label="RH_hip"];
 "RH_thigh" [label="RH_thigh"];
+"RH_calf" [label="RH_calf"];
 node [shape=ellipse, color=blue, fontcolor=blue];
 "base_link" -> "LF_HAA" [label="xyz: 0.084 0 -0.026 \nrpy: 3.14159 0.00159265 3.14159"]
 "LF_HAA" -> "LF_hip"
 "LF_hip" -> "LF_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
 "LF_HFE" -> "LF_thigh"
+"LF_thigh" -> "LF_KFE" [label="xyz: 0.0452 -0.0452 0 \nrpy: 0 -0 0"]
+"LF_KFE" -> "LF_calf"
 "base_link" -> "LH_HAA" [label="xyz: -0.084 0 -0.026 \nrpy: 3.14159 -0.00159265 3.14159"]
 "LH_HAA" -> "LH_hip"
 "LH_hip" -> "LH_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
 "LH_HFE" -> "LH_thigh"
+"LH_thigh" -> "LH_KFE" [label="xyz: 0.0452 -0.0452 0 \nrpy: 0 -0 0"]
+"LH_KFE" -> "LH_calf"
 "base_link" -> "RF_HAA" [label="xyz: 0.084 0 0.026 \nrpy: 0 -0 0"]
 "RF_HAA" -> "RF_hip"
 "RF_hip" -> "RF_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
 "RF_HFE" -> "RF_thigh"
+"RF_thigh" -> "RF_KFE" [label="xyz: -0.0452 -0.0452 0 \nrpy: 0 -0 0"]
+"RF_KFE" -> "RF_calf"
 "base_link" -> "RH_HAA" [label="xyz: -0.084 0 0.026 \nrpy: 0 -0 0"]
 "RH_HAA" -> "RH_hip"
 "RH_hip" -> "RH_HFE" [label="xyz: 0 0 0.04 \nrpy: 0 -0 0"]
 "RH_HFE" -> "RH_thigh"
+"RH_thigh" -> "RH_KFE" [label="xyz: -0.0452 -0.0452 0 \nrpy: 0 -0 0"]
+"RH_KFE" -> "RH_calf"
 }
